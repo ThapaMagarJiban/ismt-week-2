@@ -1,7 +1,7 @@
 /* === Book Manager Client Application === */
 
 // API base URL – change this if your API runs on a different host/port
-const API_BASE = (window.BOOK_LIBRARY_API_BASE || 'http://localhost:3000/api');
+const API_BASE = (window.BOOK_MANAGER_API_BASE || 'http://localhost:3000/api');
 
 // --- DOM references ---
 const booksGrid    = document.getElementById('booksGrid');

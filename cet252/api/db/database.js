@@ -2,7 +2,8 @@ const { DatabaseSync } = require('node:sqlite');
 const path = require('path');
 const fs = require('fs');
 
-const DB_PATH = path.join(__dirname, 'library.db');
+const DB_PATH = path.join(__dirname, 'books.db');
+const LEGACY_DB_PATH = path.join(__dirname, 'library.db');
 
 let db;
 
@@ -12,7 +13,10 @@ let db;
  */
 function getDb() {
   if (!db) {
-    db = new DatabaseSync(DB_PATH);
+    const resolvedPath = fs.existsSync(DB_PATH)
+      ? DB_PATH
+      : (fs.existsSync(LEGACY_DB_PATH) ? LEGACY_DB_PATH : DB_PATH);
+    db = new DatabaseSync(resolvedPath);
     db.exec('PRAGMA journal_mode = WAL');
     db.exec('PRAGMA foreign_keys = ON');
   }
