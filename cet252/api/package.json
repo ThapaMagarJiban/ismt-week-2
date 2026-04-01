@@ -4,6 +4,7 @@
   "description": "Book Manager REST API built with Node.js, Express and SQLite",
   "main": "server.js",
   "scripts": {
+    "prestart": "npm run build:docs",
     "start": "node server.js",
     "dev": "nodemon server.js",
     "build:docs": "apidoc -i routes/ -o docs/",
