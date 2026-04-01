@@ -49,6 +49,15 @@ describe('GET /', () => {
   });
 });
 
+describe('GET /api', () => {
+  it('returns API entrypoint metadata', async () => {
+    const res = await request(app).get('/api');
+    expect(res.statusCode).toBe(200);
+    expect(res.body.success).toBe(true);
+    expect(res.body.endpoints).toContain('/api/books');
+  });
+});
+
 describe('GET /api/books', () => {
   it('returns all books', async () => {
     const res = await request(app).get('/api/books');

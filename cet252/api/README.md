@@ -68,6 +68,8 @@ Tests use Jest + Supertest against an in-memory SQLite database.
 | PUT | `/api/books/:id` | Update an existing book |
 | DELETE | `/api/books/:id` | Delete a book |
 
+You can also open `GET /api` to verify the API base path is running and to see available endpoint groups.
+
 ### Query Parameters for `GET /api/books`
 
 | Parameter | Type | Description |

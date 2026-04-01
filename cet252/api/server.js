@@ -40,6 +40,18 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/api', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Book Manager API endpoints',
+    endpoints: [
+      '/api/books',
+      '/api/books/genres',
+      '/api/books/:id'
+    ]
+  });
+});
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ success: false, message: 'Route not found' });
