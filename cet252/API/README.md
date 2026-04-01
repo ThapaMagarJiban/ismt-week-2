@@ -43,7 +43,7 @@ npm run dev
 npm run build:docs
 ```
 
-Then open `docs/index.html` in your browser, or visit **http://localhost:3000/docs** while the server is running.
+Then open `../APIDOC/index.html` in your browser, or visit **http://localhost:3000/docs** while the server is running.
 
 ---
 
@@ -112,7 +112,7 @@ Content-Type: application/json
 ## Project Structure
 
 ```
-api/
+API/
 ├── server.js           # Express app entry point
 ├── db/
 │   ├── database.js     # Database connection & init (node:sqlite)
@@ -133,4 +133,4 @@ api/
 - Uses Node.js built-in `node:sqlite` (available in Node 22.5+) – no native compilation required
 - All endpoints return JSON
 - CORS is enabled for cross-origin client requests
-- Generated API docs served at `/docs` (after running `npm run build:docs`)
+- Generated API docs are written to `../APIDOC` and served at `/docs` (after running `npm run build:docs`)

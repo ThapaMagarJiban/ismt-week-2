@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve generated API documentation
-app.use('/docs', express.static(path.join(__dirname, 'docs')));
+app.use('/docs', express.static(path.join(__dirname, '../APIDOC')));
 
 // Initialise database
 initDb();

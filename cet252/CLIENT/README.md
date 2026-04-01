@@ -6,7 +6,7 @@ A lightweight vanilla JavaScript client that consumes the **Book Manager REST AP
 
 - Node.js 20+ and npm installed
 - The **Book Manager API** must be running on `http://localhost:3000`
-  (see `../api/README.md` for instructions)
+  (see `../API/README.md` for instructions)
 
 ## Getting Started
 
@@ -55,7 +55,7 @@ Tests are written with **Jest** and run in a jsdom environment to unit-test the 
 ## Project Structure
 
 ```
-client/
+CLIENT/
 ├── index.html      # Main HTML shell
 ├── styles.css      # Application styles
 ├── app.js          # All client-side JavaScript (fetch, render, events)

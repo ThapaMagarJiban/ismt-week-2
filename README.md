@@ -6,8 +6,9 @@ A full-stack Book Manager prototype built with **Node.js**, **Express**, **SQLit
 
 ```
 cet252/
-├── api/       # REST API (Node.js + Express + node:sqlite)
-└── client/    # Vanilla JS web client (HTML/CSS/JS)
+├── API/       # REST API (Node.js + Express + node:sqlite)
+├── CLIENT/    # Vanilla JS web client (HTML/CSS/JS)
+└── APIDOC/    # Generated API docs (open APIDOC/index.html)
 ```
 
 ## Quick Start
@@ -15,7 +16,7 @@ cet252/
 ### API
 
 ```bash
-cd cet252/api
+cd cet252/API
 npm install
 npm run seed   # Seed 25 books into the database
 npm start      # Start API on http://localhost:3000
@@ -24,7 +25,7 @@ npm start      # Start API on http://localhost:3000
 ### Client
 
 ```bash
-cd cet252/client
+cd cet252/CLIENT
 npm install
 npm start      # Serve client on http://localhost:8080
 ```
