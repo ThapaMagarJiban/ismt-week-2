@@ -1,0 +1,22 @@
+{
+  "name": "book-library-client",
+  "version": "1.0.0",
+  "description": "Book Library Client – a vanilla JS web app that consumes the Book Library REST API",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 8080 --cors",
+    "test": "jest --runInBand --forceExit"
+  },
+  "keywords": ["book", "library", "client", "html", "css", "javascript"],
+  "author": "Book Library",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "node-fetch": "^2.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/tests/**/*.test.js"]
+  }
+}
