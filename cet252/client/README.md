@@ -1,11 +1,11 @@
-# Book Library – Client Application
+# Book Manager – Client Application
 
-A lightweight vanilla JavaScript client that consumes the **Book Library REST API**.
+A lightweight vanilla JavaScript client that consumes the **Book Manager REST API**.
 
 ## Prerequisites
 
 - Node.js 20+ and npm installed
-- The **Book Library API** must be running on `http://localhost:3000`
+- The **Book Manager API** must be running on `http://localhost:3000`
   (see `../api/README.md` for instructions)
 
 ## Getting Started

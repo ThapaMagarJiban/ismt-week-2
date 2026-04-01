@@ -34,7 +34,7 @@ app.use('/api/books', booksRouter);
 app.get('/', (req, res) => {
   res.json({
     success: true,
-    message: 'Book Library API is running',
+    message: 'Book Manager API is running',
     version: '1.0.0',
     docs: '/docs'
   });
@@ -54,7 +54,7 @@ app.use((err, req, res, next) => {
 // Only start the server when not running under Jest
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`Book Library API running on http://localhost:${PORT}`);
+    console.log(`Book Manager API running on http://localhost:${PORT}`);
     console.log(`API Documentation: http://localhost:${PORT}/docs`);
   });
 }

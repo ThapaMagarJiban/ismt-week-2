@@ -1,6 +1,6 @@
-# ismt-week-2 – Book Library Prototype
+# ismt-week-2 – Book Manager Prototype
 
-A full-stack Book Library prototype built with **Node.js**, **Express**, **SQLite**, and a vanilla JavaScript client.
+A full-stack Book Manager prototype built with **Node.js**, **Express**, **SQLite**, and a vanilla JavaScript client.
 
 ## Repository Structure
 

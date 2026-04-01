@@ -45,7 +45,7 @@ describe('GET /', () => {
     const res = await request(app).get('/');
     expect(res.statusCode).toBe(200);
     expect(res.body.success).toBe(true);
-    expect(res.body.message).toMatch(/Book Library API/);
+    expect(res.body.message).toMatch(/Book Manager API/);
   });
 });
 

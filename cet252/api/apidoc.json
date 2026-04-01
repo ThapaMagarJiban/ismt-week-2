@@ -1,8 +1,8 @@
 {
-  "name": "Book Library API",
+  "name": "Book Manager API",
   "version": "1.0.0",
-  "description": "REST API documentation for the Book Library prototype",
-  "title": "Book Library API Docs",
+  "description": "REST API documentation for the Book Manager prototype",
+  "title": "Book Manager API Docs",
   "url": "http://localhost:3000",
   "sampleUrl": false,
   "template": {

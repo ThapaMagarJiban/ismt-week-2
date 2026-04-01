@@ -1,7 +1,7 @@
 {
-  "name": "book-library-api",
+  "name": "book-manager-api",
   "version": "1.0.0",
-  "description": "Book Library REST API built with Node.js, Express and SQLite",
+  "description": "Book Manager REST API built with Node.js, Express and SQLite",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -10,8 +10,8 @@
     "test": "jest --runInBand --forceExit",
     "seed": "node db/seed.js"
   },
-  "keywords": ["book", "library", "api", "nodejs", "express", "sqlite"],
-  "author": "Book Library",
+  "keywords": ["book", "manager", "api", "nodejs", "express", "sqlite"],
+  "author": "Book Manager",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",

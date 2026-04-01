@@ -1,6 +1,6 @@
-# Book Library – REST API
+# Book Manager – REST API
 
-A Node.js + Express REST API for managing a book library, backed by SQLite via Node's built-in `node:sqlite` module.
+A Node.js + Express REST API for managing a book manager, backed by SQLite via Node's built-in `node:sqlite` module.
 
 ## Prerequisites
 
