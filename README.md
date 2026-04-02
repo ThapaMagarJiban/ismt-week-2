@@ -19,7 +19,7 @@ cet252/
 cd cet252/API
 npm install
 npm run seed   # Seed 25 books into the database
-npm start      # Start API on http://localhost:3000
+npm start      # Start API + serve client on http://localhost:3000
 ```
 
 ### Client
@@ -29,6 +29,10 @@ cd cet252/CLIENT
 npm install
 npm start      # Serve client on http://localhost:8080
 ```
+
+You can use either URL for the UI:
+- `http://localhost:3000/` (served by API)
+- `http://localhost:8080/` (standalone client server)
 
 See each folder's `README.md` for full details.
 

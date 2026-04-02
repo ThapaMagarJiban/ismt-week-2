@@ -6,6 +6,7 @@ const booksRouter = require('./routes/books');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const CLIENT_DIR = path.join(__dirname, '../CLIENT');
 
 // Middleware
 app.use(cors());
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve generated API documentation
 app.use('/docs', express.static(path.join(__dirname, '../APIDOC')));
+app.use(express.static(CLIENT_DIR));
 
 // Initialise database
 initDb();
@@ -32,11 +34,16 @@ app.use('/api/books', booksRouter);
  * @apiSuccess {String} version API version
  */
 app.get('/', (req, res) => {
+  if (req.accepts(['json', 'html']) === 'html') {
+    return res.sendFile(path.join(CLIENT_DIR, 'index.html'));
+  }
+
   res.json({
     success: true,
     message: 'Book Manager API is running',
     version: '1.0.0',
-    docs: '/docs'
+    docs: '/docs',
+    app: '/'
   });
 });
 

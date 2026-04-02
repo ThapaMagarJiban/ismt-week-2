@@ -16,7 +16,7 @@ A lightweight vanilla JavaScript client that consumes the **Book Manager REST AP
 npm install
 ```
 
-### 2. Start the development server
+### 2. Start the development server (optional)
 
 ```bash
 npm start
@@ -25,6 +25,8 @@ npm start
 This will serve the client at **http://localhost:8080**.
 
 Open your browser and navigate to [http://localhost:8080](http://localhost:8080).
+
+> You can also open the client directly from the API at **http://localhost:3000/** after starting `../API`.
 
 ---
 
