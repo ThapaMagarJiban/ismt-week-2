@@ -44,3 +44,7 @@ See each folder's `README.md` for full details.
 - Responsive card-based UI
 - API documentation (apiDoc)
 - Integration tests (API) and unit tests (client)
+
+## Design Deliverable
+
+- Low-fidelity wireframes (initial designs): [`LOW_FIDELITY_WIREFRAMES.md`](./LOW_FIDELITY_WIREFRAMES.md)
