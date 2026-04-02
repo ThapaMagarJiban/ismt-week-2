@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve generated API documentation
 app.use('/docs', express.static(path.join(__dirname, '../APIDOC')));
-app.use(express.static(CLIENT_DIR));
+app.use(express.static(CLIENT_DIR, { index: false }));
 
 // Initialise database
 initDb();
@@ -34,7 +34,8 @@ app.use('/api/books', booksRouter);
  * @apiSuccess {String} version API version
  */
 app.get('/', (req, res) => {
-  if (req.accepts(['json', 'html']) === 'html') {
+  const accept = req.get('accept') || '';
+  if (accept.includes('text/html')) {
     return res.sendFile(path.join(CLIENT_DIR, 'index.html'));
   }
 
