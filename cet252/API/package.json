@@ -12,7 +12,14 @@
     "test": "jest --runInBand --forceExit",
     "seed": "node db/seed.js"
   },
-  "keywords": ["book", "manager", "api", "nodejs", "express", "sqlite"],
+  "keywords": [
+    "book",
+    "manager",
+    "api",
+    "nodejs",
+    "express",
+    "sqlite"
+  ],
   "author": "Book Manager",
   "license": "MIT",
   "dependencies": {
@@ -27,6 +34,8 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testMatch": ["**/tests/**/*.test.js"]
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
   }
 }
