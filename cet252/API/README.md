@@ -59,6 +59,13 @@ Tests use Jest + Supertest against an in-memory SQLite database.
 
 ## API Endpoints
 
+### CRUD mapping
+
+- **Create** → `POST /api/books`
+- **Read** → `GET /api/books` and `GET /api/books/:id`
+- **Update** → `PUT /api/books/:id`
+- **Delete** → `DELETE /api/books/:id`
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/books` | List all books (supports `?q=`, `?genre=`, `?available=`) |

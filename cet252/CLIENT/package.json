@@ -7,15 +7,24 @@
     "start": "npx serve . -l 8080 --cors",
     "test": "jest --runInBand --forceExit"
   },
-  "keywords": ["book", "manager", "client", "html", "css", "javascript"],
+  "keywords": [
+    "book",
+    "manager",
+    "client",
+    "html",
+    "css",
+    "javascript"
+  ],
   "author": "Book Manager",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^30.2.0"
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0"
   },
   "jest": {
     "testEnvironment": "node",
-    "testMatch": ["**/tests/**/*.test.js"]
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
   }
 }

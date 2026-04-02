@@ -39,6 +39,7 @@ Open your browser and navigate to [http://localhost:8080](http://localhost:8080)
 | Filter by genre | Dropdown to filter the book list by genre |
 | Filter by availability | Show only available or unavailable books |
 | Add a book | Click **+ Add Book** to open the form and create a new entry |
+| View a book | Click **👁️ View** to read full book details (READ) |
 | Edit a book | Click **✏️ Edit** on any card to update details |
 | Delete a book | Click **🗑️ Delete** on any card; a confirmation dialog is shown |
 

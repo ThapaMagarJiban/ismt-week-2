@@ -107,6 +107,7 @@ function renderBooks(books) {
       <p class="meta">${escHtml(book.genre)} &bull; ${book.year} &bull; <em>${escHtml(book.isbn)}</em></p>
       <p class="description">${escHtml(book.description || '')}</p>
       <div class="card-actions">
+        <button class="btn btn-primary view-btn" data-id="${book.id}">👁️ View</button>
         <button class="btn btn-warning edit-btn" data-id="${book.id}">✏️ Edit</button>
         <button class="btn btn-danger delete-btn" data-id="${book.id}">🗑️ Delete</button>
       </div>
@@ -114,6 +115,9 @@ function renderBooks(books) {
   `).join('');
 
   // Attach event listeners
+  booksGrid.querySelectorAll('.view-btn').forEach((btn) =>
+    btn.addEventListener('click', () => openViewModal(Number(btn.dataset.id)))
+  );
   booksGrid.querySelectorAll('.edit-btn').forEach((btn) =>
     btn.addEventListener('click', () => openEditModal(Number(btn.dataset.id)))
   );
@@ -160,6 +164,25 @@ async function openEditModal(id) {
     fIsbn.value   = data.isbn;
     fDesc.value   = data.description || '';
     fAvail.value  = String(data.available);
+    openModal(modal);
+  } catch (e) {
+    showStatus('Could not load book details: ' + e.message, 'error');
+  }
+}
+
+async function openViewModal(id) {
+  try {
+    const { data } = await apiFetch(`/books/${id}`);
+    modalTitle.textContent = 'Book Details';
+    bookIdField.value = data.id;
+    fTitle.value = data.title;
+    fAuthor.value = data.author;
+    fGenre.value = data.genre;
+    fYear.value = data.year;
+    fIsbn.value = data.isbn;
+    fDesc.value = data.description || '';
+    fAvail.value = String(data.available);
+    saveBtn.classList.add('hidden');
     openModal(modal);
   } catch (e) {
     showStatus('Could not load book details: ' + e.message, 'error');
@@ -238,7 +261,12 @@ confirmDeleteBtn.addEventListener('click', async () => {
 // ===================== MODAL HELPERS =====================
 
 function openModal(m) { m.classList.remove('hidden'); }
-function closeModal(m) { m.classList.add('hidden'); }
+function closeModal(m) {
+  m.classList.add('hidden');
+  if (m === modal) {
+    saveBtn.classList.remove('hidden');
+  }
+}
 
 // Close buttons
 modalClose.addEventListener('click', () => closeModal(modal));
