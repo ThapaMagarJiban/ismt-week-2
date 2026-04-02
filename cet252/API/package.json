@@ -37,5 +37,9 @@
     "testMatch": [
       "**/tests/**/*.test.js"
     ]
+  },
+  "overrides": {
+    "bootstrap": "^5.3.8",
+    "esbuild": "^0.25.11"
   }
 }
