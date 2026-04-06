@@ -51,6 +51,18 @@ function availBadgeLabel(available) {
   return available ? '✅ Available' : '❌ Not Available';
 }
 
+const BOOK_COVER_FALLBACK = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="104" viewBox="0 0 72 104"><rect width="72" height="104" rx="8" fill="%23f0f4f8"/><rect x="8" y="12" width="56" height="80" rx="4" fill="%23e2e8f0"/><text x="36" y="56" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="%234a5568">No Cover</text></svg>';
+
+function normalizeIsbn(isbn) {
+  return String(isbn || '').replace(/[^0-9Xx]/g, '').toUpperCase();
+}
+
+function bookCoverUrl(book) {
+  const isbn = normalizeIsbn(book?.isbn);
+  if (!isbn) return BOOK_COVER_FALLBACK;
+  return `https://covers.openlibrary.org/b/isbn/${encodeURIComponent(isbn)}-M.jpg?default=false`;
+}
+
 // ===================== Tests =====================
 
 describe('escHtml', () => {
@@ -116,5 +128,29 @@ describe('availBadgeLabel', () => {
 
   it('returns not available label for falsy value', () => {
     expect(availBadgeLabel(0)).toMatch(/Not Available/);
+  });
+});
+
+describe('normalizeIsbn', () => {
+  it('removes non isbn chars and uppercases X', () => {
+    expect(normalizeIsbn('978-0-261-10221-7')).toBe('9780261102217');
+    expect(normalizeIsbn('0-8041-3902-x')).toBe('080413902X');
+  });
+
+  it('returns empty string for empty input', () => {
+    expect(normalizeIsbn('')).toBe('');
+    expect(normalizeIsbn(null)).toBe('');
+  });
+});
+
+describe('bookCoverUrl', () => {
+  it('returns OpenLibrary URL when isbn exists', () => {
+    expect(bookCoverUrl({ isbn: '978-0-261-10221-7' })).toBe(
+      'https://covers.openlibrary.org/b/isbn/9780261102217-M.jpg?default=false'
+    );
+  });
+
+  it('returns local fallback data-url when isbn is missing', () => {
+    expect(bookCoverUrl({ isbn: '' })).toBe(BOOK_COVER_FALLBACK);
   });
 });

@@ -12,6 +12,7 @@ const genreFilter  = document.getElementById('genreFilter');
 const availFilter  = document.getElementById('availFilter');
 const addBookBtn   = document.getElementById('addBookBtn');
 const statusMsg    = document.getElementById('statusMsg');
+const BOOK_COVER_FALLBACK = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="104" viewBox="0 0 72 104"><rect width="72" height="104" rx="8" fill="%23f0f4f8"/><rect x="8" y="12" width="56" height="80" rx="4" fill="%23e2e8f0"/><text x="36" y="56" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="%234a5568">No Cover</text></svg>';
 
 // Add/Edit modal
 const modal        = document.getElementById('modal');
@@ -106,9 +107,9 @@ function renderBooks(books) {
         <img
           class="book-cover"
           src="${bookCoverUrl(book)}"
+          data-fallback="${BOOK_COVER_FALLBACK}"
           alt="Cover of ${escHtml(book.title)}"
           loading="lazy"
-          onerror="this.onerror=null;this.src='https://via.placeholder.com/72x104/f0f4f8/4a5568?text=Book';"
         />
         <h3>${escHtml(book.title)}</h3>
       </div>
@@ -133,12 +134,26 @@ function renderBooks(books) {
   booksGrid.querySelectorAll('.delete-btn').forEach((btn) =>
     btn.addEventListener('click', () => openDeleteModal(Number(btn.dataset.id), btn))
   );
+  booksGrid.querySelectorAll('.book-cover').forEach((img) => {
+    const applyFallback = () => {
+      const fallback = img.dataset.fallback || BOOK_COVER_FALLBACK;
+      if (img.src !== fallback) img.src = fallback;
+    };
+    img.addEventListener('error', applyFallback);
+    img.addEventListener('load', () => {
+      if (!img.naturalWidth || img.naturalWidth <= 1) applyFallback();
+    });
+  });
 }
 
 function bookCoverUrl(book) {
-  const isbn = String(book?.isbn || '').trim();
-  if (!isbn) return 'https://via.placeholder.com/72x104/f0f4f8/4a5568?text=Book';
+  const isbn = normalizeIsbn(book?.isbn);
+  if (!isbn) return BOOK_COVER_FALLBACK;
   return `https://covers.openlibrary.org/b/isbn/${encodeURIComponent(isbn)}-M.jpg?default=false`;
+}
+
+function normalizeIsbn(isbn) {
+  return String(isbn || '').replace(/[^0-9Xx]/g, '').toUpperCase();
 }
 
 function escHtml(str) {
