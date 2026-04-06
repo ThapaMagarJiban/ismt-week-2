@@ -106,8 +106,8 @@ function renderBooks(books) {
       <div class="book-head">
         <img
           class="book-cover"
-          src="${bookCoverUrl(book)}"
-          data-fallback="${BOOK_COVER_FALLBACK}"
+          src="${BOOK_COVER_FALLBACK}"
+          data-cover-url="${bookCoverUrl(book)}"
           alt="Cover of ${escHtml(book.title)}"
           loading="lazy"
         />
@@ -134,16 +134,28 @@ function renderBooks(books) {
   booksGrid.querySelectorAll('.delete-btn').forEach((btn) =>
     btn.addEventListener('click', () => openDeleteModal(Number(btn.dataset.id), btn))
   );
-  booksGrid.querySelectorAll('.book-cover').forEach((img) => {
-    const applyFallback = () => {
-      const fallback = img.dataset.fallback || BOOK_COVER_FALLBACK;
-      if (img.src !== fallback) img.src = fallback;
-    };
-    img.addEventListener('error', applyFallback);
-    img.addEventListener('load', () => {
-      if (!img.naturalWidth || img.naturalWidth <= 1) applyFallback();
-    });
-  });
+  booksGrid.querySelectorAll('.book-cover').forEach(hydrateBookCover);
+}
+
+function hydrateBookCover(img) {
+  const target = String(img.dataset.coverUrl || '').trim();
+  if (!target || target === BOOK_COVER_FALLBACK) {
+    img.src = BOOK_COVER_FALLBACK;
+    return;
+  }
+
+  const probe = new Image();
+  probe.onload = () => {
+    if (probe.naturalWidth && probe.naturalWidth > 1) {
+      img.src = target;
+    } else {
+      img.src = BOOK_COVER_FALLBACK;
+    }
+  };
+  probe.onerror = () => {
+    img.src = BOOK_COVER_FALLBACK;
+  };
+  probe.src = target;
 }
 
 function bookCoverUrl(book) {
