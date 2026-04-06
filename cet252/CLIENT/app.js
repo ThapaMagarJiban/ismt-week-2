@@ -102,7 +102,16 @@ function renderBooks(books) {
       <span class="badge ${book.available ? 'badge-available' : 'badge-unavailable'}">
         ${book.available ? '✅ Available' : '❌ Not Available'}
       </span>
-      <h3>${escHtml(book.title)}</h3>
+      <div class="book-head">
+        <img
+          class="book-cover"
+          src="${bookCoverUrl(book)}"
+          alt="Cover of ${escHtml(book.title)}"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://via.placeholder.com/72x104/f0f4f8/4a5568?text=Book';"
+        />
+        <h3>${escHtml(book.title)}</h3>
+      </div>
       <p class="author">by ${escHtml(book.author)}</p>
       <p class="meta">${escHtml(book.genre)} &bull; ${book.year} &bull; <em>${escHtml(book.isbn)}</em></p>
       <p class="description">${escHtml(book.description || '')}</p>
@@ -124,6 +133,12 @@ function renderBooks(books) {
   booksGrid.querySelectorAll('.delete-btn').forEach((btn) =>
     btn.addEventListener('click', () => openDeleteModal(Number(btn.dataset.id), btn))
   );
+}
+
+function bookCoverUrl(book) {
+  const isbn = String(book?.isbn || '').trim();
+  if (!isbn) return 'https://via.placeholder.com/72x104/f0f4f8/4a5568?text=Book';
+  return `https://covers.openlibrary.org/b/isbn/${encodeURIComponent(isbn)}-M.jpg?default=false`;
 }
 
 function escHtml(str) {
