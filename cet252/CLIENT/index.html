@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Manager</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>📚 Book Manager</h1>
+      <p class="tagline">Manage your reading collection</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Search & Filter Bar -->
+    <section class="controls">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by title or author…" />
+        <button id="searchBtn" class="btn btn-primary">Search</button>
+        <button id="clearBtn" class="btn btn-secondary">Clear</button>
+      </div>
+      <div class="filter-bar">
+        <label for="genreFilter">Genre:</label>
+        <select id="genreFilter">
+          <option value="">All Genres</option>
+        </select>
+        <label for="availFilter">Availability:</label>
+        <select id="availFilter">
+          <option value="">All</option>
+          <option value="1">Available</option>
+          <option value="0">Not Available</option>
+        </select>
+        <button id="addBookBtn" class="btn btn-success">+ Add Book</button>
+      </div>
+    </section>
+
+    <!-- Status / Error message -->
+    <div id="statusMsg" class="status-msg hidden"></div>
+
+    <!-- Books Grid -->
+    <section id="booksGrid" class="books-grid">
+      <div class="loading">Loading books…</div>
+    </section>
+  </main>
+
+  <!-- Add / Edit Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <h2 id="modalTitle">Add New Book</h2>
+      <form id="bookForm" novalidate>
+        <input type="hidden" id="bookId" />
+        <div class="form-group">
+          <label for="fTitle">Title *</label>
+          <input type="text" id="fTitle" required />
+        </div>
+        <div class="form-group">
+          <label for="fAuthor">Author *</label>
+          <input type="text" id="fAuthor" required />
+        </div>
+        <div class="form-group">
+          <label for="fGenre">Genre *</label>
+          <input type="text" id="fGenre" required />
+        </div>
+        <div class="form-group">
+          <label for="fYear">Year *</label>
+          <input type="number" id="fYear" min="1000" max="2099" required />
+        </div>
+        <div class="form-group">
+          <label for="fIsbn">ISBN *</label>
+          <input type="text" id="fIsbn" required />
+        </div>
+        <div class="form-group">
+          <label for="fDescription">Description</label>
+          <textarea id="fDescription" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="fAvailable">Available</label>
+          <select id="fAvailable">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-success" id="saveBtn">Save</button>
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete Confirm Modal -->
+  <div id="deleteModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-content modal-sm">
+      <h2>Confirm Delete</h2>
+      <p id="deleteMsg">Are you sure you want to delete this book?</p>
+      <div class="form-actions">
+        <button id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
+        <button id="cancelDeleteBtn" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Book Manager &copy; 2024 &mdash; Powered by Node.js + Express + SQLite</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

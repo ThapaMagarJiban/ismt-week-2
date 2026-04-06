@@ -1,0 +1,30 @@
+{
+  "name": "book-manager-client",
+  "version": "1.0.0",
+  "description": "Book Manager Client – a vanilla JS web app that consumes the Book Manager REST API",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 8080 --cors",
+    "test": "jest --runInBand --forceExit"
+  },
+  "keywords": [
+    "book",
+    "manager",
+    "client",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Book Manager",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
