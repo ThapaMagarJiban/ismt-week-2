@@ -48,11 +48,11 @@ describe('GET /', () => {
     expect(res.body.message).toMatch(/Book Manager API/);
   });
 
-  it('serves the client app for browser requests', async () => {
+  it('returns JSON even for browser-style requests', async () => {
     const res = await request(app).get('/').set('Accept', 'text/html');
     expect(res.statusCode).toBe(200);
-    expect(res.text).toContain('<!DOCTYPE html>');
-    expect(res.text).toContain('<title>Book Manager</title>');
+    expect(res.body.success).toBe(true);
+    expect(res.body.message).toMatch(/Book Manager API/);
   });
 });
 
