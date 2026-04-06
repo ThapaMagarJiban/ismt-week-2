@@ -51,7 +51,8 @@ function availBadgeLabel(available) {
   return available ? '✅ Available' : '❌ Not Available';
 }
 
-const BOOK_COVER_FALLBACK = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="104" viewBox="0 0 72 104"><rect width="72" height="104" rx="8" fill="%23f0f4f8"/><rect x="8" y="12" width="56" height="80" rx="4" fill="%23e2e8f0"/><text x="36" y="56" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="%234a5568">No Cover</text></svg>';
+const BOOK_COVER_FALLBACK_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="72" height="104" viewBox="0 0 72 104"><rect width="72" height="104" rx="8" fill="#f0f4f8"/><rect x="8" y="12" width="56" height="80" rx="4" fill="#e2e8f0"/><text x="36" y="56" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#4a5568">No Cover</text></svg>';
+const BOOK_COVER_FALLBACK = `data:image/svg+xml,${encodeURIComponent(BOOK_COVER_FALLBACK_SVG)}`;
 
 function normalizeIsbn(isbn) {
   return String(isbn || '').replace(/[^0-9Xx]/g, '').toUpperCase();
