@@ -52,19 +52,6 @@ function initDb() {
     );
   `);
 
-  database.exec(`
-    CREATE TABLE IF NOT EXISTS book_loans (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      book_id INTEGER NOT NULL,
-      borrower_name TEXT NOT NULL,
-      borrowed_at TEXT NOT NULL DEFAULT (datetime('now')),
-      due_at TEXT,
-      returned_at TEXT,
-      FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
-    );
-  `);
-
-  database.exec('CREATE INDEX IF NOT EXISTS idx_book_loans_book_id ON book_loans(book_id);');
   database.exec('CREATE INDEX IF NOT EXISTS idx_books_genre ON books(genre);');
 
   const count = database.prepare('SELECT COUNT(*) as cnt FROM books').get();
