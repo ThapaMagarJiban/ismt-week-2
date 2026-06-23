@@ -1,0 +1,15 @@
+@model CommunityEventManagement.Models.Participant
+@{ ViewData["Title"] = "Create Participant"; }
+<h1>Create Participant</h1>
+<form asp-action="Create">
+    <div class="form-group mb-3">
+        <label asp-for="Name"></label><input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Email"></label><input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Phone"></label><input asp-for="Phone" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

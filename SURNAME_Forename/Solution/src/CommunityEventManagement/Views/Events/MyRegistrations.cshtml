@@ -1,0 +1,18 @@
+@model IEnumerable<CommunityEventManagement.Models.Registration>
+@{ ViewData["Title"] = "My Registrations"; }
+<h1>My Registrations</h1>
+<table class="table">
+    <thead>
+        <tr><th>Event Name</th><th>Date</th><th>Registration Date</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@item.Event.Name</td>
+            <td>@item.Event.Date.ToString("g")</td>
+            <td>@item.RegistrationDate.ToString("g")</td>
+            <td>@item.Status</td>
+        </tr>
+}
+    </tbody>
+</table>

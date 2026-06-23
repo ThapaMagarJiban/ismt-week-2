@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CommunityEventManagement.Tests/CommunityEventManagement.Tests.csproj" />
+    <Project Path="src/CommunityEventManagement/CommunityEventManagement.csproj" />
+  </Folder>
+</Solution>
