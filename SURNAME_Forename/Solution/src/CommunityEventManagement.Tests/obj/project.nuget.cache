@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HEGAVttNHk4=",
+  "dgSpecHash": "PDpKCsXWgcQ=",
   "success": true,
-  "projectFilePath": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement.Tests/CommunityEventManagement.Tests.csproj",
+  "projectFilePath": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement.Tests/CommunityEventManagement.Tests.csproj",
   "expectedPackageFiles": [
     "/home/runner/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/runner/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",
@@ -49,9 +49,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
-      "projectPath": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement.Tests/CommunityEventManagement.Tests.csproj",
+      "projectPath": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement.Tests/CommunityEventManagement.Tests.csproj",
       "warningLevel": 1,
-      "filePath": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement.Tests/CommunityEventManagement.Tests.csproj",
+      "filePath": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement.Tests/CommunityEventManagement.Tests.csproj",
       "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
       "targetGraphs": [
         "net10.0"

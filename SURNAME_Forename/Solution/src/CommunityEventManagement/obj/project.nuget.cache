@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nfcfattrqqs=",
+  "dgSpecHash": "AfC8wlBRt5Q=",
   "success": true,
-  "projectFilePath": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/CommunityEventManagement.csproj",
+  "projectFilePath": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/CommunityEventManagement.csproj",
   "expectedPackageFiles": [
     "/home/runner/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/runner/.nuget/packages/microsoft.build.framework/18.0.2/microsoft.build.framework.18.0.2.nupkg.sha512",
@@ -42,9 +42,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
-      "projectPath": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/CommunityEventManagement.csproj",
+      "projectPath": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/CommunityEventManagement.csproj",
       "warningLevel": 1,
-      "filePath": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/CommunityEventManagement.csproj",
+      "filePath": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/CommunityEventManagement.csproj",
       "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
       "targetGraphs": [
         "net10.0"

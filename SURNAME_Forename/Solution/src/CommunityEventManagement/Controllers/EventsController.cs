@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using CommunityEventManagement.Services;
 using CommunityEventManagement.Models;
 using System.Threading.Tasks;
+using System;
 
 namespace CommunityEventManagement.Controllers
 {
@@ -14,9 +15,13 @@ namespace CommunityEventManagement.Controllers
             _eventService = eventService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? venueFilter, string? activityFilter, DateTime? dateFilter)
         {
-            var events = await _eventService.GetAllEventsAsync();
+            ViewData["VenueFilter"] = venueFilter;
+            ViewData["ActivityFilter"] = activityFilter;
+            ViewData["DateFilter"] = dateFilter?.ToString("yyyy-MM-dd");
+
+            var events = await _eventService.GetAllEventsAsync(venueFilter, activityFilter, dateFilter);
             return View(events);
         }
 
@@ -51,23 +56,27 @@ namespace CommunityEventManagement.Controllers
             return View(ev);
         }
         
-        // Mock registration for a default participant (id=1)
         [HttpPost, ActionName("Register")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RegisterConfirmed(int id)
         {
             try
             {
-                // In a real app, ParticipantId comes from logged-in user
-                await _eventService.RegisterParticipantAsync(id, 1);
+                await _eventService.RegisterParticipantAsync(id, 1); // default participant ID 1
                 TempData["Message"] = "Successfully registered!";
                 return RedirectToAction(nameof(Details), new { id = id });
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
                 return RedirectToAction(nameof(Details), new { id = id });
             }
+        }
+        
+        public async Task<IActionResult> MyRegistrations()
+        {
+            var registrations = await _eventService.GetRegistrationsForParticipantAsync(1); // default participant ID 1
+            return View(registrations);
         }
     }
 }

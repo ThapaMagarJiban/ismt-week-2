@@ -1,0 +1,12 @@
+@model IEnumerable<CommunityEventManagement.Models.Venue>
+@{ ViewData["Title"] = "Venues"; }
+<h1>Venues</h1>
+<p><a asp-action="Create" class="btn btn-primary">Create New</a></p>
+<table class="table">
+    <thead><tr><th>Name</th><th>Address</th><th>Capacity</th></tr></thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr><td>@item.Name</td><td>@item.Address</td><td>@item.Capacity</td></tr>
+}
+    </tbody>
+</table>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using CommunityEventManagement.Models;
 using CommunityEventManagement.Repositories;
@@ -19,13 +20,30 @@ namespace CommunityEventManagement.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Event>> GetAllEventsAsync()
+        public async Task<IEnumerable<Event>> GetAllEventsAsync(string? venueFilter = null, string? activityFilter = null, DateTime? dateFilter = null)
         {
-            return await _context.Events
+            var query = _context.Events
                 .Include(e => e.Registrations)
                 .Include(e => e.EventVenues).ThenInclude(ev => ev.Venue)
                 .Include(e => e.EventActivities).ThenInclude(ea => ea.Activity)
-                .ToListAsync();
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(venueFilter))
+            {
+                query = query.Where(e => e.EventVenues.Any(ev => ev.Venue.Name.Contains(venueFilter)));
+            }
+
+            if (!string.IsNullOrEmpty(activityFilter))
+            {
+                query = query.Where(e => e.EventActivities.Any(ea => ea.Activity.Type.Contains(activityFilter)));
+            }
+
+            if (dateFilter.HasValue)
+            {
+                query = query.Where(e => e.Date.Date == dateFilter.Value.Date);
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task<Event?> GetEventByIdAsync(int id)
@@ -75,6 +93,14 @@ namespace CommunityEventManagement.Services
             {
                 throw new InvalidOperationException("Participant is already registered for this event.");
             }
+        }
+        
+        public async Task<IEnumerable<Registration>> GetRegistrationsForParticipantAsync(int participantId)
+        {
+            return await _context.Registrations
+                .Include(r => r.Event)
+                .Where(r => r.ParticipantId == participantId)
+                .ToListAsync();
         }
     }
 }

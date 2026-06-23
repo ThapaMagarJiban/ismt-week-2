@@ -2445,11 +2445,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/CommunityEventManagement.csproj",
+      "projectUniqueName": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/CommunityEventManagement.csproj",
       "projectName": "CommunityEventManagement",
-      "projectPath": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/CommunityEventManagement.csproj",
+      "projectPath": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/CommunityEventManagement.csproj",
       "packagesPath": "/home/runner/.nuget/packages/",
-      "outputPath": "/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/obj/",
+      "outputPath": "/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/runner/.nuget/NuGet/NuGet.Config"

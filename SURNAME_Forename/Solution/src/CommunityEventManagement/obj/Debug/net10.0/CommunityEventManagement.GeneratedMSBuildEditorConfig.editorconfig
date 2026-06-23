@@ -20,53 +20,81 @@ build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = CommunityEventManagement
 build_property.RootNamespace = CommunityEventManagement
-build_property.ProjectDir = /home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/
+build_property.ProjectDir = /home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement
+build_property.MSBuildProjectDirectory = /home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/Events/Create.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Activities/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0aXZpdGllcy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Activities/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0aXZpdGllcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Events/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/Events/Details.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Events/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/Events/Index.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Events/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/Home/Index.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Events/MyRegistrations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL015UmVnaXN0cmF0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/Home/Privacy.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/Shared/Error.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Participants/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFydGljaXBhbnRzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Participants/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFydGljaXBhbnRzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/_ViewImports.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Venues/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVudWVzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Venues/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVudWVzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/_ViewStart.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/ismt-week-2/ismt-week-2/src/CommunityEventManagement/Views/Shared/_Layout.cshtml]
+[/home/runner/work/ismt-week-2/ismt-week-2/SURNAME_Forename/Solution/src/CommunityEventManagement/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9iso11fyt6
